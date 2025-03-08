@@ -1,0 +1,103 @@
+CREATE TABLE DASHBOARD_CC_TARGET_MONTHLY
+(
+  UNIT_CODE      VARCHAR2(15 BYTE),
+  T_YEAR         NUMBER,
+  MONTH_ID       INTEGER,
+  TARGET_AMOUNT  NUMBER                         DEFAULT 0                     NOT NULL,
+  STATUS         INTEGER                        DEFAULT 1                     NOT NULL,
+  TXN_USER       VARCHAR2(15 BYTE),
+  TXN_DATE       DATE                           DEFAULT SYSDATE               NOT NULL
+);
+
+CREATE UNIQUE INDEX DASHBOARD_CC_TARGET_MONTHLY_PK ON DASHBOARD_CC_TARGET_MONTHLY
+(UNIT_CODE, T_YEAR, MONTH_ID);
+
+
+CREATE TABLE DASHBOARD_CHL_TARGET_MONTHLY
+(
+  T_YEAR         NUMBER,
+  MONTH_ID       INTEGER,
+  TARGET_COUNT   NUMBER                         DEFAULT 0                     NOT NULL,
+  TARGET_AMOUNT  NUMBER                         DEFAULT 0                     NOT NULL,
+  STATUS         INTEGER                        DEFAULT 1                     NOT NULL,
+  TXN_USER       VARCHAR2(15 BYTE),
+  TXN_DATE       DATE                           DEFAULT SYSDATE               NOT NULL
+);
+
+CREATE UNIQUE INDEX DASHBOARD_CHL_TARGET_MONTHLYPK ON DASHBOARD_CHL_TARGET_MONTHLY
+(T_YEAR, MONTH_ID);
+
+
+CREATE TABLE DASHBOARD_SNA_TARGET_MONTHLY
+(
+  SERVICE_CODE   VARCHAR2(15 BYTE),
+  T_YEAR         NUMBER,
+  MONTH_ID       INTEGER,
+  TARGET_COUNT   NUMBER                         DEFAULT 0                     NOT NULL,
+  TARGET_AMOUNT  NUMBER                         DEFAULT 0                     NOT NULL,
+  STATUS         INTEGER                        DEFAULT 1                     NOT NULL,
+  TXN_USER       VARCHAR2(15 BYTE),
+  TXN_DATE       DATE                           DEFAULT SYSDATE               NOT NULL
+);
+
+CREATE UNIQUE INDEX DASHBOARD_SNA_TARGET_MONTHLYPK ON DASHBOARD_SNA_TARGET_MONTHLY
+(SERVICE_CODE, T_YEAR, MONTH_ID);
+
+
+CREATE TABLE DASHBOARD_SPEC_TARGET_MONTHLY
+(
+  SPECIALITY_ID  VARCHAR2(15 BYTE),
+  T_YEAR         NUMBER,
+  MONTH_ID       INTEGER,
+  TARGET_COUNT   NUMBER                         DEFAULT 0                     NOT NULL,
+  STATUS         INTEGER                        DEFAULT 1                     NOT NULL,
+  TXN_USER       VARCHAR2(15 BYTE),
+  TXN_DATE       DATE                           DEFAULT SYSDATE               NOT NULL,
+  TARGET_AMOUNT  NUMBER
+);
+
+CREATE TABLE DASHBOARD_TARGET_COUNT_MONTHLY
+(
+  T_YEAR      NUMBER,
+  MONTH_ID    INTEGER,
+  LAB_OPD     NUMBER                            DEFAULT 0                     NOT NULL,
+  LAB_INWARD  NUMBER                            DEFAULT 0                     NOT NULL,
+  PH_OPD      NUMBER                            DEFAULT 0                     NOT NULL,
+  PH_INWARD   NUMBER                            DEFAULT 0                     NOT NULL,
+  SNA_OPD     NUMBER                            DEFAULT 0                     NOT NULL,
+  SNA_INWARD  NUMBER                            DEFAULT 0                     NOT NULL,
+  MP_OPD      NUMBER                            DEFAULT 0                     NOT NULL,
+  MP_INWARD   NUMBER                            DEFAULT 0                     NOT NULL,
+  STATUS      INTEGER                           DEFAULT 1                     NOT NULL,
+  TXN_USER    VARCHAR2(15 BYTE),
+  TXN_DATE    DATE                              DEFAULT SYSDATE               NOT NULL
+);
+
+
+CREATE UNIQUE INDEX DASHBOARD_TARGET_COUNT_MONT_PK ON DASHBOARD_TARGET_COUNT_MONTHLY
+(T_YEAR, MONTH_ID);
+
+
+CREATE TABLE DASHBOARD_TARGET_MONTHLY
+(
+  T_YEAR      NUMBER,
+  MONTH_ID    INTEGER,
+  LAB_OPD     NUMBER                            DEFAULT 0                     NOT NULL,
+  LAB_INWARD  NUMBER                            DEFAULT 0                     NOT NULL,
+  PH_OPD      NUMBER                            DEFAULT 0                     NOT NULL,
+  PH_INWARD   NUMBER                            DEFAULT 0                     NOT NULL,
+  SNA_OPD     NUMBER                            DEFAULT 0                     NOT NULL,
+  SNA_INWARD  NUMBER                            DEFAULT 0                     NOT NULL,
+  MP_OPD      NUMBER                            DEFAULT 0                     NOT NULL,
+  MP_INWARD   NUMBER                            DEFAULT 0                     NOT NULL,
+  STATUS      INTEGER                           DEFAULT 1                     NOT NULL,
+  TXN_USER    VARCHAR2(15 BYTE),
+  TXN_DATE    DATE                              DEFAULT SYSDATE               NOT NULL
+);
+
+
+CREATE UNIQUE INDEX DASHBOARD_TARGET_MONTHLY_PK ON DASHBOARD_TARGET_MONTHLY
+(T_YEAR, MONTH_ID);
+
+ALTER TABLE EHOS.DASHBOARD_CC_TARGET_MONTHLY
+ ADD (TARGET_COUNT  NUMBER                          DEFAULT 0);

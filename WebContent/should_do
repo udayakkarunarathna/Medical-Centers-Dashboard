@@ -1,0 +1,16 @@
+
+
+npm install
+
+Run in WebContent/node_moduls  --->   npm install highcharts --save
+
+Run in WebContent/node_moduls/highcharts  --->   npm install highcharts-border-radius
+
+
+install telnet to the server
+command 1 : yum install telnet telnet-server -y
+
+vi /etc/xinetd.d/telnet
+and Set disable = no:
+
+service xinetd start

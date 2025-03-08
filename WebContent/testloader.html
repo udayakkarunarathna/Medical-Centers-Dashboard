@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/jquery.loading-indicator.js"></script>
+<link type="text/css" rel="stylesheet"
+	href="css/jquery.loading-indicator.css" />
+<script>
+	var homeLoader
+	function loadLoader() {
+		homeLoader = $('body').loadingIndicator({
+			useImage : false,
+		}).data("loadingIndicator");
+
+		alert('aaa');
+	}
+</script>
+</head>
+<body>
+
+
+	<script>
+		loadLoader();
+		deloadLoader();
+		function deloadLoader() {
+			homeLoader.hide();
+		}
+	</script>
+</body>
+</html>

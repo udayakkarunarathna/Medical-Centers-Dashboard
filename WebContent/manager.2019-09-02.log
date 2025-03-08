@@ -1,0 +1,4 @@
+02-Sep-2019 02:41:06.950 INFO [http-nio-8080-exec-155] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+02-Sep-2019 10:16:30.225 INFO [http-nio-8080-exec-157] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'
+02-Sep-2019 10:16:52.670 INFO [http-nio-8080-exec-156] org.apache.catalina.core.ApplicationContext.log HTMLManager: sessions: Session action 'null' for web application '/his##0.0.3.9.1'
+02-Sep-2019 10:17:00.958 INFO [http-nio-8080-exec-160] org.apache.catalina.core.ApplicationContext.log HTMLManager: list: Listing contexts for virtual host 'localhost'

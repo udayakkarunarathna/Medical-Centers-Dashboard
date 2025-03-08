@@ -1,0 +1,18 @@
+<%
+			DatabaseConnection conn = new DatabaseConnection();
+
+			ResultSet rs77test = null;
+			String query77test = "";
+			try {
+				conn.ConnectToDataBase(Integer.parseInt((String) session.getAttribute("mc")));
+				query77test = "SELECT BHT FROM HOSPITAL_VISIT";
+				rs77test = conn.query(query77test);
+				while (rs77test.next()) {
+					out.println(rs77test.getString(1));
+				}
+				conn.CloseDataBaseConnection();
+			} catch (Exception e) {
+				System.out.println(e);
+				conn.CloseDataBaseConnection();
+			}
+					%>
